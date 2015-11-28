@@ -1,0 +1,3 @@
+[submodule "quantumui"]
+	path = quantumui
+	url = https://github.com/fiWhy/quantumui.git
