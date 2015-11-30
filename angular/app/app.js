@@ -1,1 +1,1 @@
-var app = angular.module('AdminApp', ['httpPostFix', 'datatables', ]);
+var app = angular.module('AdminApp', ['httpPostFix', 'smart-table' ]);

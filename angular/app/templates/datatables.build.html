@@ -1,6 +1,26 @@
-<table datatable
-       dt-options="dtOptions"
-       dt-columns="dtColumns"
-       dt-instance="dtInstance"
-       class="table table-bordered table-hover dataTable" role="pin">
-</table>
+<table class="table" st-pipe="call" st-table="data">
+       <thead>
+       <tr>
+              <th></th>
+              <th data-ng-repeat="th in headers" data-ng-attr-st-sort="th.sortable?th.field:''">{[{ th.title }]}</th>
+       </tr>
+       </thead>
+       <tbody ng-show="!isLoading">
+       <tr data-ng-repeat="row in data.data">
+              <td cs-select="row"></td>
+              <td data-ng-repeat="td in headers">
+                     {[{ row[model][td.field] }]}
+              </td>
+       </tbody>
+       <tbody ng-show="isLoading">
+       <tr>
+              <td colspan="4" class="text-center">Loading ... </td>
+       </tr>
+       </tbody>
+       <tfoot>
+       <tr>
+              <td class="text-center" st-pagination="" st-items-by-page="limit" colspan="4">
+              </td>
+       </tr>
+       </tfoot>
+</table>	
